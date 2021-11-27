@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CurrencyView {
+public class RateView {
 
     private String currency;
     private String Code;

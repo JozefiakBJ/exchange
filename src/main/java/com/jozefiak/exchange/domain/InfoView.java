@@ -12,5 +12,5 @@ public class InfoView {
     private String no;
     private String tradingDate;
     private String effectiveDate;
-    private List<CurrencyView> rates;
+    private List<RateView> rates;
 }
