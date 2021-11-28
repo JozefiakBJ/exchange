@@ -9,7 +9,6 @@ public class RateView {
 
     private String currency;
     private String code;
-    private String bid;
     private String ask;
 
 }
