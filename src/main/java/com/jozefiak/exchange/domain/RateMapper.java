@@ -7,6 +7,8 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface RateMapper {
 
-    Rate toRate(RateView books);
-    List<Rate> toRate(List<RateView>  books);
+    Rate toRate(RateView rateView);
+    List<Rate> toRate(List<RateView>  rateViews);
+    List<RateView> toRateView(List<Rate> rate);
+    RateView toRateView(Rate rate);
 }

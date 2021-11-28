@@ -17,7 +17,7 @@ public class Rate {
     private Long id;
 
     private String currency;
-    private String Code;
+    private String code;
     private String bid;
     private String ask;
 

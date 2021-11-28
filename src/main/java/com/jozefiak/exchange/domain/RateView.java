@@ -8,7 +8,7 @@ import lombok.Data;
 public class RateView {
 
     private String currency;
-    private String Code;
+    private String code;
     private String bid;
     private String ask;
 

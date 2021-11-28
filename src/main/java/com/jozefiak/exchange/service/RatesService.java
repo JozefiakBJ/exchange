@@ -1,9 +1,6 @@
 package com.jozefiak.exchange.service;
 
-import com.jozefiak.exchange.domain.RateMapper;
-import com.jozefiak.exchange.domain.RateMapperImpl;
-import com.jozefiak.exchange.domain.RateView;
-import com.jozefiak.exchange.domain.InfoView;
+import com.jozefiak.exchange.domain.*;
 import com.jozefiak.exchange.repository.RateRepo;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
@@ -29,7 +26,6 @@ public class RatesService {
         this.rateMapper = new RateMapperImpl();
     }
 
-    //get all currencies now
     public List<RateView> getActualRates()
     {
 
@@ -50,4 +46,12 @@ public class RatesService {
         return rateViews;
     }
 
+    public List<RateView> getAllRates()
+    {
+       return rateMapper.toRateView(rateRepo.findAll());
+    }
+
+    public RateView getRate(String code) {
+        return rateMapper.toRateView(rateRepo.findByCode(code));
+    }
 }
