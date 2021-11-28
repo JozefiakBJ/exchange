@@ -2,7 +2,10 @@ package com.jozefiak.exchange.service;
 
 import com.jozefiak.exchange.domain.dto.InfoView;
 import com.jozefiak.exchange.domain.dto.RateView;
-import com.jozefiak.exchange.domain.mapper.*;
+import com.jozefiak.exchange.domain.mapper.InfoMapper;
+import com.jozefiak.exchange.domain.mapper.InfoMapperImpl;
+import com.jozefiak.exchange.domain.mapper.RateViewMapper;
+import com.jozefiak.exchange.domain.mapper.RateViewMapperImpl;
 import com.jozefiak.exchange.repository.InfoRepo;
 import com.jozefiak.exchange.repository.RateRepo;
 import org.springframework.core.ParameterizedTypeReference;
@@ -14,47 +17,37 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 @RestController
-public class RatesService {
+public class InfoService {
 
     private final WebClient webClient;
-    private final RateRepo rateRepo;
-    private final RateViewMapper rateViewMapper;
     private final InfoMapper infoMapper;
     private final InfoRepo infoRepo;
 
-    public RatesService(WebClient.Builder webClientBuilder, RateRepo rateRepo, InfoRepo infoRepo) {
+    public InfoService(WebClient.Builder webClientBuilder, InfoRepo infoRepo) {
 
         this.webClient = webClientBuilder.baseUrl("http://api.nbp.pl/api/exchangerates/tables/").build();
-        this.rateRepo = rateRepo;
         this.infoRepo = infoRepo;
         this.infoMapper = new InfoMapperImpl();
-        this.rateViewMapper = new RateViewMapperImpl();
 
     }
 
-    public List<InfoView> getActualRates()
+    public List<InfoView> getLastRates(int days)
     {
-
         Mono<List<InfoView>> response = webClient.get()
-                .uri("/C")
+                .uri("/C/last/"+days)
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<>() {});
 
         List<InfoView> r = response.block();
 
+        infoRepo.deleteAll();
+
         infoRepo.saveAll(infoMapper.toInfo(r));
 
         return r;
     }
 
-    public List<RateView> getAllRates()
-    {
-       return rateViewMapper.toRateView(rateRepo.findAll());
-    }
 
-    public RateView getRate(String code) {
-        return rateViewMapper.toRateView(rateRepo.findByCode(code));
-    }
 
 }

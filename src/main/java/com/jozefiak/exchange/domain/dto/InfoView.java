@@ -1,4 +1,4 @@
-package com.jozefiak.exchange.domain;
+package com.jozefiak.exchange.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.jozefiak.exchange.domain;
+package com.jozefiak.exchange.domain.model;
 
 import lombok.Data;
 
@@ -18,7 +18,6 @@ public class Rate {
 
     private String currency;
     private String code;
-    private String bid;
     private String ask;
 
 }
