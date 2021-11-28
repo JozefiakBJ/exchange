@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -49,5 +51,19 @@ public class InfoService {
     }
 
 
+    public List<InfoView> getHistorical(Date startDate, Date endDate) {
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
+        String sDate = simpleDateFormat.format(startDate);
+        String eDate = simpleDateFormat.format(endDate);
+
+        Mono<List<InfoView>> response = webClient.get()
+                .uri("/C/"+sDate + "/" + eDate)
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .bodyToMono(new ParameterizedTypeReference<>() {});
+
+        return response.block();
+    }
 }
