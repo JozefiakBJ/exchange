@@ -10,6 +10,7 @@ import com.jozefiak.exchange.repository.InfoRepo;
 import com.jozefiak.exchange.repository.RateRepo;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -18,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-@RestController
+@Service
 public class InfoService {
 
     private final WebClient webClient;

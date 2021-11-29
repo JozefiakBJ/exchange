@@ -18,6 +18,8 @@ public class Rate {
 
     private String currency;
     private String code;
-    private String ask;
+    private double ask;
+    private double bid;
+
 
 }
