@@ -5,13 +5,12 @@ import com.jozefiak.exchange.domain.dto.RateView;
 import com.jozefiak.exchange.domain.mapper.*;
 import com.jozefiak.exchange.repository.InfoRepo;
 import com.jozefiak.exchange.repository.RateRepo;
+
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
-
 import java.util.List;
 
 @Service

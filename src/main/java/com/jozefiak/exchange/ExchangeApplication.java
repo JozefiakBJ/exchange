@@ -2,7 +2,6 @@ package com.jozefiak.exchange;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
 public class ExchangeApplication {

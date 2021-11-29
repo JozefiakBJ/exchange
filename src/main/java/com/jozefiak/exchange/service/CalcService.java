@@ -1,20 +1,11 @@
 package com.jozefiak.exchange.service;
 
 import com.jozefiak.exchange.domain.dto.CalcResponse;
-import com.jozefiak.exchange.domain.dto.InfoView;
 import com.jozefiak.exchange.domain.model.Rate;
-import com.jozefiak.exchange.repository.InfoRepo;
 import com.jozefiak.exchange.repository.RateRepo;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
-
-import java.util.List;
-
-import static java.lang.String.format;
 
 @Service
 @RequiredArgsConstructor

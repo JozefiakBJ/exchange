@@ -1,8 +1,6 @@
 package com.jozefiak.exchange.domain.model;
 
-import com.jozefiak.exchange.domain.dto.RateView;
 import lombok.Data;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
