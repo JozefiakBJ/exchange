@@ -5,6 +5,9 @@ import lombok.Data;
 @Data
 public class CalcResponse {
 
+    private String info;
     private int purchaseAmount ;
     private String code;
+    private double currency;
+    private double convertedAmount;
 }

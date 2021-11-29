@@ -43,7 +43,7 @@ public class RatesService {
                 .bodyToMono(new ParameterizedTypeReference<>() {});
 
         List<InfoView> r = response.block();
-
+        infoRepo.deleteAll();
         infoRepo.saveAll(infoMapper.toInfo(r));
 
         return r;
