@@ -2,7 +2,9 @@ package com.jozefiak.exchange.service;
 
 import com.jozefiak.exchange.domain.dto.InfoView;
 import com.jozefiak.exchange.domain.dto.RateView;
+import com.jozefiak.exchange.domain.exception.NotFoundException;
 import com.jozefiak.exchange.domain.mapper.*;
+import com.jozefiak.exchange.domain.model.Rate;
 import com.jozefiak.exchange.repository.InfoRepo;
 import com.jozefiak.exchange.repository.RateRepo;
 
@@ -54,7 +56,10 @@ public class RatesService {
     }
 
     public RateView getRate(String code) {
-        return rateViewMapper.toRateView(rateRepo.findByCode(code));
+        return rateViewMapper.toRateView( rateRepo.findByCode(code)
+                .orElseThrow(
+                        () -> new NotFoundException("Currency with code" + code + " not found")
+                ));
     }
 
 }

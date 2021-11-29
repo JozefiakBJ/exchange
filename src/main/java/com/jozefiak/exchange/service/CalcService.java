@@ -1,6 +1,7 @@
 package com.jozefiak.exchange.service;
 
 import com.jozefiak.exchange.domain.dto.CalcResponse;
+import com.jozefiak.exchange.domain.exception.NotFoundException;
 import com.jozefiak.exchange.domain.model.Rate;
 import com.jozefiak.exchange.repository.RateRepo;
 
@@ -16,7 +17,10 @@ public class CalcService {
 
     public CalcResponse calculate(boolean flag, String code, int purchaseAmount) {
         ratesService.getActualRates();
-        Rate rate  = rateRepo.findByCode(code);
+        Rate rate  = rateRepo.findByCode(code)
+                .orElseThrow(
+                        () -> new NotFoundException("Currency with code " + code + " not found")
+                );
 
         double convertedAmount;
         String info = "From PLN";

@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = "api/calc")
@@ -16,7 +18,7 @@ public class CalcApi {
     private final CalcService calcService;
 
     @GetMapping("/{flag}/{code}/{amount}")
-    public CalcResponse getLastRates(@PathVariable boolean flag, @PathVariable String code, @PathVariable int amount ) {
+    public CalcResponse getLastRates( @PathVariable boolean flag, @PathVariable String code, @PathVariable int amount ) {
         return calcService.calculate(flag,code,amount);
     }
 
