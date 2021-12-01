@@ -64,16 +64,11 @@ This project aims to show a little bit dose of my skils of programming, knowledg
 <!-- USAGE EXAMPLES -->
 ## Usage
 swagger info(after instalation go localhost:8080) :
-<div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="swag.png" alt="Logo" width="80" height="80">
+   <img src="swag.png"></br>
     
-#some calculated example
+some calculated example</br></br>
 </a>
-  <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="calc.png" alt="Logo" width="80" height="80">
-  </a>
+    <img src="calc.png">
     
 
 <p align="right">(<a href="#top">back to top</a>)</p>
