@@ -63,11 +63,17 @@ This project aims to show a little bit dose of my skils of programming, knowledg
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-- LOG IN <br> Without log in by passing credit card number and your PIN you can't have access to deposit or withdraw your money.<br>
-- REGISTER <br> You can create an new account.<br>
-- DEPOSIT and WITHDRAW <br> You can deposit and withdraw money in USD, EUR and PLN.<br>
-- INFO <br>You can receive information about your account like your personal info and your deposit.<br>
+swagger info(after instalation go localhost:8080) :
+<div align="center">
+  <a href="https://github.com/github_username/repo_name">
+    <img src="swag.png" alt="Logo" width="80" height="80">
+    
+#some calculated example
+</a>
+  <div align="center">
+  <a href="https://github.com/github_username/repo_name">
+    <img src="calc.png" alt="Logo" width="80" height="80">
+  </a>
     
 
 <p align="right">(<a href="#top">back to top</a>)</p>
