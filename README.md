@@ -4,9 +4,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="atm.png" alt="Logo" width="80" height="80">
-  </a>
 
 <h3 align="center">Currency Exchange </h3>
 
@@ -53,14 +50,12 @@ This project aims to show a little bit dose of my skils of programming, knowledg
 
 1. Clone the repo.
    ```sh
-   git clone https://github.com/jozefiakBJ/JavaATM-SQL.git
+   git clone https://github.com/jozefiakBJ/exchange.git
    ```
    
-2. Run mySQL and run atm.sql from repo.
+2. Run mySQL and create "new" db schema
 
-3. Set up your connection to DB in DBConnector class.
-
-4. Run project in IntelliJ or other IDE and happily enjoy your own ATM.
+4. Run project in IntelliJ 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
